@@ -1,0 +1,13 @@
+<p>Watch the waits for your favorite attractions</p>
+<ul>
+  <% @destinations.each do |destination| %>
+    <li>
+       <a href="/destinations/<%= destination.id %>"><%= destination.name %></a><br>
+        <% destination.waittimes.each do |waittime| %>
+          <%= waittime.day_of_week %> <%= waittime.time_of_day %> - <%= waittime.wait %>
+
+        <% end %>
+    </li>
+  <% end%>
+
+</ul>
